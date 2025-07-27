@@ -4,7 +4,7 @@ import com.example.demo.common.exception.ResourceNotFoundException;
 import com.example.demo.post.domain.PostCreate;
 import com.example.demo.post.domain.PostUpdate;
 import com.example.demo.post.infrastructure.PostEntity;
-import com.example.demo.post.infrastructure.PostRepository;
+import com.example.demo.post.service.port.PostRepository;
 import com.example.demo.user.infrastructure.UserEntity;
 import com.example.demo.user.service.UserService;
 import java.time.Clock;
@@ -19,7 +19,8 @@ public class PostService {
     private final UserService userService;
 
     public PostEntity getById(long id) {
-        return postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Posts", id));
+        return postRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Posts", id));
     }
 
     public PostEntity create(PostCreate postCreateDto) {
