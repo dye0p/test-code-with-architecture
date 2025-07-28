@@ -1,4 +1,4 @@
-package com.example.demo.user;
+package com.example.demo.user.service;
 
 import com.example.demo.user.service.port.MailSender;
 import lombok.RequiredArgsConstructor;

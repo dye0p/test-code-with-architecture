@@ -35,4 +35,24 @@ public class PostEntity {
     @JoinColumn(name = "user_id")
     private UserEntity writer;
 
+    public static PostEntity fromModel(final com.example.demo.post.domain.Post post) {
+        PostEntity postEntity = new PostEntity();
+        postEntity.id = post.getId();
+        postEntity.content = post.getContent();
+        postEntity.createdAt = post.getCreatedAt();
+        postEntity.modifiedAt = post.getModifiedAt();
+        postEntity.writer = UserEntity.fromModel(post.getWriter());
+        return postEntity;
+
+    }
+
+    public com.example.demo.post.domain.Post toModel() {
+        return com.example.demo.post.domain.Post.builder()
+                .id(id)
+                .content(content)
+                .createdAt(createdAt)
+                .modifiedAt(modifiedAt)
+                .writer(writer.toModel())
+                .build();
+    }
 }

@@ -4,6 +4,7 @@ package com.example.demo.user;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.example.demo.mock.FakeMailSender;
+import com.example.demo.user.service.CertificationService;
 import org.junit.jupiter.api.Test;
 
 class CertificationServiceTest {

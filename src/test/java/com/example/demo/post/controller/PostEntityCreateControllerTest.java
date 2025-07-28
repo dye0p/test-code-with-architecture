@@ -24,7 +24,7 @@ import org.springframework.test.web.servlet.MockMvc;
         @Sql(value = "/sql/post-create-controller-test-data.sql", executionPhase = ExecutionPhase.BEFORE_TEST_METHOD),
         @Sql(value = "/sql/delete-all-data.sql", executionPhase = ExecutionPhase.AFTER_TEST_METHOD)
 })
-public class PostCreateControllerTest {
+public class PostEntityCreateControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
